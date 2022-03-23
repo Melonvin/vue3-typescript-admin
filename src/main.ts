@@ -4,6 +4,8 @@ import App from './App.vue'
 // vue-router
 import router from './router'
 
+import 'normalize.css'
+
 // element plus
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
