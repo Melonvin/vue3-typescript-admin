@@ -49,6 +49,11 @@
   resolved "https://registry.npmmirror.com/@emmetio/scanner/-/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==
 
+"@howiefh/ant-path-matcher@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmmirror.com/@howiefh/ant-path-matcher/-/ant-path-matcher-0.0.2.tgz#fe60c468be5e7eb0c48983b0f770c76729a03223"
+  integrity sha512-gIVZbBi7KX43XaI4GUDITYgR6YFdRiGBu4HazVkjVTZ/tlNH6qSpydTxaZ1cd2eIzvSblXM63SqCxVo30yA9ww==
+
 "@popperjs/core@^2.11.3":
   version "2.11.4"
   resolved "https://registry.npmmirror.com/@popperjs/core/-/core-2.11.4.tgz#d8c7b8db9226d2d7664553a0741ad7d0397ee503"
@@ -311,7 +316,7 @@ character-parser@^2.2.0:
   dependencies:
     is-regex "^1.0.3"
 
-"chokidar@>=3.0.0 <4.0.0":
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.2:
   version "3.5.3"
   resolved "https://registry.npmmirror.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
   integrity sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==
@@ -981,6 +986,14 @@ upath@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmmirror.com/upath/-/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
   integrity sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==
+
+vite-plugin-mock-server@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npmmirror.com/vite-plugin-mock-server/-/vite-plugin-mock-server-1.0.4.tgz#23624c8bc583a519193b14f47f1447ca1a927d67"
+  integrity sha512-ByWLtrBZVo1UkaHPvRpRo0+h/gWorWdTyuYCu2Hcicz3gbuSSdDjz6v8pUGAzpubae90Q7ziOqRL1TOHsbQpsQ==
+  dependencies:
+    "@howiefh/ant-path-matcher" "0.0.2"
+    chokidar "^3.5.2"
 
 vite@^2.8.0:
   version "2.8.6"
