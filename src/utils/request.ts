@@ -8,6 +8,7 @@ interface ServiceRequestConfig<T = any> extends AxiosRequestConfig {
 }
 
 const service = new Service({
+  baseURL: '/vapi',
   timeout: 5000,
   interceptors: {
     // add interceptors here to do something

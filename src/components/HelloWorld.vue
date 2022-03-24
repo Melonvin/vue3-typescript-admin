@@ -2,11 +2,7 @@
 import request from '../utils/request'
 const click = () => {
   request({
-    url: 'https://api.apishop.net/common/weather/get15DaysWeatherByArea',
-    params: {
-      apiKey: 'i3jBSaj9d59a00cef130c3a723bf126145b1fccb06a37e2',
-      areaID: '101280101'
-    }
+    url: '/api/test'
   }).then(res => {
     console.log(res)
   })
