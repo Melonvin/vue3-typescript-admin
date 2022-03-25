@@ -17,10 +17,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/vapi': {
+      '/devapi': {
         target: 'http://localhost:3000/',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/vapi/, '')
+        rewrite: path => path.replace(/^\/devapi/, '')
       }
     }
   }

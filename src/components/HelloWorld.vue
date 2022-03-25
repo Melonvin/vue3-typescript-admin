@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import request from '../utils/request'
 const click = () => {
   request({
@@ -7,6 +8,10 @@ const click = () => {
     console.log(res)
   })
 }
+
+onMounted(() => {
+  console.log(import.meta.env.VITE_BASE_URL)
+})
 </script>
 
 <template>
