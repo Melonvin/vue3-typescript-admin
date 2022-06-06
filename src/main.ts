@@ -11,9 +11,14 @@ import './styles/index.scss' // global css
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+import './permission'
+import pinia from './pinia'
+
 const app = createApp(App)
 
 app.use(router)
-app.use(ElementPlus)
+    .use(ElementPlus)
+    .use(pinia)
+    .mount('#app')
 
-app.mount('#app')
+export default app
