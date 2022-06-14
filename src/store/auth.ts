@@ -6,4 +6,4 @@ export const useAuthStore = defineStore('user', {
             token: ''
         }
     }
-});
+})

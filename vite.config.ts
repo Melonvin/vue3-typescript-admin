@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 // https://github.com/enjoycoding/vite-plugin-mock-server
 import mockServer from 'vite-plugin-mock-server'
+import eslint from 'vite-plugin-eslint'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +11,8 @@ export default defineConfig({
     vue(),
     mockServer({
       logLevel: 'info'
-    })
+    }),
+    eslint()
   ],
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, 'src') }]

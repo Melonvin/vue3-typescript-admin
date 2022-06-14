@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { User, Lock } from '@element-plus/icons-vue'
-import { ref } from 'vue';
-const username = ref('')
-const password = ref('')
+import { ref } from 'vue'
+const username = ref('admin')
+const password = ref('admin')
 const loading = ref(false)
 const login = () => {
   loading.value = true
 
-  console.log('click');
+  console.log('click')
 }
 </script>
 
@@ -46,7 +46,13 @@ const login = () => {
             </el-form-item>
           </el-form>
 
-          <el-button :loading="loading" type="primary" size="large" @click="login">登录</el-button>
+          <el-button
+            :loading="loading"
+            type="primary"
+            size="large"
+            @click="login"
+            >登录</el-button
+          >
         </div>
       </div>
     </div>
