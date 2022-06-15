@@ -1,10 +1,10 @@
 import axios from 'axios'
 import type { AxiosInstance, AxiosRequestConfig } from 'axios'
-import type { ConfigWithInterceptors, Interceptors } from './types'
+import type { ConfigWithInterceptors, Interceptors } from './interfaces'
 
 class Service {
-  instance: AxiosInstance
-  interceptors?: Interceptors
+  private instance: AxiosInstance
+  private interceptors?: Interceptors
 
   constructor(config: ConfigWithInterceptors) {
     this.instance = axios.create(config)

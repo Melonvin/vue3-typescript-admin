@@ -1,13 +1,20 @@
 <script setup lang="ts">
+import { LoginData } from '@/api/user/models/login'
+import { useUserStore } from '@/store/user'
+import { UserActionType } from '@/store/user/actions'
 import { User, Lock } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 const username = ref('admin')
 const password = ref('admin')
 const loading = ref(false)
-const login = () => {
+const store = useUserStore()
+const login = async () => {
   loading.value = true
 
-  console.log('click')
+  // store.login(new LoginData(username.value, password.value)).then(res => {
+  //   console.log(res)
+  // })
+  // store.create()
 }
 </script>
 
@@ -31,6 +38,7 @@ const login = () => {
                 :prefix-icon="User"
                 size="large"
                 placeholder="请输入账号"
+                :disabled="loading"
               ></el-input>
             </el-form-item>
 
@@ -42,6 +50,7 @@ const login = () => {
                 :prefix-icon="Lock"
                 size="large"
                 placeholder="请输入密码"
+                :disabled="loading"
               ></el-input>
             </el-form-item>
           </el-form>

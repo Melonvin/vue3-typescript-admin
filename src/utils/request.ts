@@ -1,7 +1,7 @@
 import { AxiosRequestConfig, Method } from 'axios'
 import Service from '../libs/axios'
 
-interface ServiceRequestConfig<T = any> extends AxiosRequestConfig {
+interface ServiceRequestConfig<T = unknown> extends AxiosRequestConfig {
   url: string
   method?: Method
   params?: T
@@ -16,12 +16,22 @@ const service = new Service({
   }
 })
 
-const request = (config: ServiceRequestConfig) => {
+async function request<T>(
+  config: ServiceRequestConfig
+): Promise<T | undefined> {
   const { method = 'get' } = config
   if (method.toLowerCase() === 'post') {
     config.data = config.params
   }
-  return service.request(config)
+  try {
+    const res = await service.request(config)
+    if (res.status === 200) {
+      return res.data as T
+    }
+  } catch (error) {
+    console.log(error)
+  }
+  return void 0
 }
 
 export default request
