@@ -8,13 +8,11 @@ const username = ref('admin')
 const password = ref('admin')
 const loading = ref(false)
 const store = useUserStore()
+
 const login = async () => {
   loading.value = true
 
-  // store.login(new LoginData(username.value, password.value)).then(res => {
-  //   console.log(res)
-  // })
-  // store.create()
+  store.login(new LoginData(username.value, password.value))
 }
 </script>
 
