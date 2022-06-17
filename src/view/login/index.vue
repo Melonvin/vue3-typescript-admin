@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { LoginData } from '@/api/user/models/login'
-import { useUserStore } from '@/store/user'
-import { UserActionType } from '@/store/user/actions'
+import router from '@/router'
+import { UserAction, useUserStore } from '@/store/user'
 import { User, Lock } from '@element-plus/icons-vue'
 import { ref } from 'vue'
 const username = ref('admin')
@@ -12,7 +12,13 @@ const store = useUserStore()
 const login = async () => {
   loading.value = true
 
-  store.login(new LoginData(username.value, password.value))
+  store[UserAction.LOGIN](new LoginData(username.value, password.value)).then(
+    () => {
+      if (store.token) {
+        router.push({ path: '/' })
+      }
+    }
+  )
 }
 </script>
 

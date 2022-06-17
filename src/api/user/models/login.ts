@@ -11,4 +11,5 @@ export class LoginData {
 export interface LoginResponse {
   username: string
   avatar: string
+  token: string
 }

@@ -1,15 +1,11 @@
 import router from '@/router'
-import { useAuthStore } from './store/auth';
+import { useUserStore } from './store/user'
 
+router.beforeEach(to => {
+  const store = useUserStore()
+  const isAuthenticated = !!store.token
 
-
-router.beforeEach((to) => {
-    const store = useAuthStore();
-    const isAuthenticated = !!store.token;
-
-    if (!isAuthenticated && to.name !== "Login") {
-        return { name: 'Login' };
-    }
-});
-
-
+  if (!isAuthenticated && to.name !== 'Login') {
+    return { name: 'Login' }
+  }
+})

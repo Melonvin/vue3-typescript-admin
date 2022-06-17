@@ -10,7 +10,8 @@ export default defineConfig({
   plugins: [
     vue(),
     mockServer({
-      logLevel: 'info'
+      logLevel: 'info',
+      urlPrefixes: ['/vue3-typescript-admin/']
     }),
     eslint()
   ],

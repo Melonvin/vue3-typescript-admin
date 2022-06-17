@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-extra-semi */
 /**
  * @description user store
  * @author lxj
@@ -6,20 +7,28 @@
 import { login } from '@/api/user'
 import { LoginData } from '@/api/user/models/login'
 import { defineStore } from 'pinia'
-import { state, UserState } from './state'
+import { UserState } from './types'
+
+export enum UserAction {
+  LOGIN = 'login'
+}
 
 export const useUserStore = defineStore('users', {
-  state: (): UserState => state,
+  state: (): UserState => ({
+    token: '',
+    username: '',
+    avatar: ''
+  }),
   actions: {
-    login: async function (data: LoginData): Promise<void> {
+    [UserAction.LOGIN]: async function (data: LoginData): Promise<void> {
       const res = await login(data)
       if (res) {
-        this.username = res.username
-        this.avatar = res.avatar
+        ;[this.username, this.avatar, this.token] = [
+          res.username,
+          res.avatar,
+          res.token
+        ]
       }
-    },
-    create() {
-      console.log(1)
     }
   }
 })

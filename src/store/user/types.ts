@@ -9,9 +9,3 @@ export interface UserState {
   username: string
   avatar: string
 }
-
-export const state: UserState = {
-  token: '',
-  username: '',
-  avatar: ''
-}

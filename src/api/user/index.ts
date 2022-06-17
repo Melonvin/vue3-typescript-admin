@@ -8,7 +8,7 @@ import { LoginData, LoginResponse } from './models/login'
 
 export function login(data: LoginData) {
   return request<LoginResponse>({
-    url: '/api/test',
+    url: '/vue3-typescript-admin/user/login',
     method: 'post',
     data
   })
